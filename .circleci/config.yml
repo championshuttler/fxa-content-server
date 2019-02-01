@@ -38,8 +38,13 @@ jobs:
         docker:
             - image: circleci/node:8-stretch-browsers
         steps:
+        - setup_remote_docker
         - attach_workspace:
               at: ~/
+
+        - run:
+            name: Start redis
+            command: docker pull redis && docker run -d --name redis-server -p 6379:6379 redis
 
         - run:
               name: Run fxa-content-server
@@ -68,8 +73,13 @@ jobs:
         docker:
         - image: circleci/node:8-stretch-browsers
         steps:
+        - setup_remote_docker
         - attach_workspace:
               at: ~/
+
+        - run:
+            name: Start redis
+            command: docker pull redis && docker run -d --name redis-server -p 6379:6379 redis
 
         - run:
               name: Run fxa-content-server
@@ -98,8 +108,13 @@ jobs:
         docker:
         - image: circleci/node:8-stretch-browsers
         steps:
+        - setup_remote_docker
         - attach_workspace:
               at: ~/
+
+        - run:
+            name: Start redis
+            command: docker pull redis && docker run -d --name redis-server -p 6379:6379 redis
 
         - run:
               name: Run fxa-content-server
@@ -128,8 +143,13 @@ jobs:
         docker:
         - image: circleci/node:8-stretch-browsers
         steps:
+        - setup_remote_docker
         - attach_workspace:
               at: ~/
+
+        - run:
+            name: Start redis
+            command: docker pull redis && docker run -d --name redis-server -p 6379:6379 redis
 
         - run:
               name: Run fxa-content-server
@@ -154,8 +174,13 @@ jobs:
         docker:
             - image: circleci/node:8-stretch-browsers
         steps:
+            - setup_remote_docker
             - attach_workspace:
                   at: ~/
+
+            - run:
+                name: Start redis
+                command: docker pull redis && docker run -d --name redis-server -p 6379:6379 redis
 
             - run:
                   name: Run fxa-content-server
