@@ -118,7 +118,7 @@ registerSuite('routes/get-index', {
               },
             };
             response = {redirect: sinon.spy()};
-            instance.process(request, response);
+            return instance.process(request, response);
           },
 
           after: () => {
@@ -143,7 +143,7 @@ registerSuite('routes/get-index', {
               },
             };
             response = {render: sinon.spy()};
-            instance.process(request, response);
+            return instance.process(request, response);
           },
 
           after: () => {
